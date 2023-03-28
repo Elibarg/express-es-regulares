@@ -5,22 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .certo
+        {
+            background-color: lightgreen;
+        }
+        .errado
+        {
+            background-color: lightcoral;
+        }
+    </style>
 </head>
 <body>
+    
     degite seu cep: <input type="text" id="cep" onkeyup="ValidarCEP();">
 </body>
 <script>
-    function ValidarCEP() {
+    function ValidarCEP() 
+    {
         //acesse o site regex101.com
-        expressao = /[0-9]{5}-[0-9]-{3}/g; 
+        expressao = /[0-9]{5}-[0-9]{3}/g; 
         texto = cep.value;
         resposta = expressao.test(texto);
         if (resposta==true)
         {
+            cep.classList.remover('errado');
             cep.classList.add('certo');
         }
         if (resposta==false)
         {
+            cep.classList.remover('certo');
             cep.classList.add('errado');
         } 
     }
