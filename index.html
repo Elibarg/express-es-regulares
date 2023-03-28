@@ -30,17 +30,18 @@
         {
             cep.value = texto +"-"
         }
+    
         resposta = expressao.test(texto);
         if (resposta==true)
         {
-            cep.classList.remover('errado');
+            cep.classList.remove('errado');
             cep.classList.add('certo');
         }
         if (resposta==false)
         {
-            cep.classList.remover('certo');
+            cep.classList.remove('certo');
             cep.classList.add('errado');
-        } 
+        }
     }
 </script>
 </html>
